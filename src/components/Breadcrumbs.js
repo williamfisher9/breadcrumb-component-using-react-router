@@ -1,17 +1,19 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem } from 'react-bootstrap';
+import { Breadcrumb } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 
 function Breadcrumbs() {
     const location = useLocation();
     let currentLocation = '';
 
+    const pathNameLength = location.pathname.split('/').length;
+
     const crumbs = location.pathname.split('/').filter((crumb) => crumb !== '')
-    .map((crumb) => {
+    .map((crumb, ci) => {
         currentLocation += `/${crumb}`;
-        return <BreadcrumbItem key={crumb} style={{textDecoration: 'none'}}>
+        return <Breadcrumb.Item key={crumb} active={ci === pathNameLength-1 ? false : true}>
             <Link to={currentLocation}>{crumb.toUpperCase()}</Link>
-        </BreadcrumbItem>
+        </Breadcrumb.Item>
     });
 
     return (
