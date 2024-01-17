@@ -1,0 +1,12 @@
+import React from 'react'
+import { Container } from 'react-bootstrap'
+
+function Home() {
+    return (
+        <Container>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae nemo sint adipisci eligendi labore eaque ab quam alias, voluptatum deleniti.</p>
+        </Container>
+    )
+}
+
+export default Home
