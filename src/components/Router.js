@@ -2,35 +2,33 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import NavBar from "./NavBar";
 import Home from "./Home";
 import ServicesList from "./ServicesList";
-import ProcessPaymentService from "./ProcessPaymentService";
-import InitializePaymentService from "./InitializePaymentService";
-import CreatePaymentService from "./CreatePaymentService";
+import PaymentProcessingService from "./PaymentProcessingService";
+import PaymentInitializationService from "./PaymentInitializationService";
+import PaymentCreationService from "./PaymentCreationService";
 import ServicesLayout from "./ServicesLayout";
 import About from "./About";
 import Contact from "./Contact";
 
 
 const router = createBrowserRouter(createRoutesFromElements(
-    
         <Route path="/" element={<NavBar />}>
             <Route index element={<Home />} />
             <Route path="services">
                 <Route index element={<ServicesList />} />
                 <Route path="*"  element={<ServicesLayout />} >
-                    <Route path="process" element={<ProcessPaymentService />} />
+                    <Route path="process" element={<PaymentProcessingService  data={'Payment is being processed...'}/>} />
                     <Route path="create">
-                        <Route index element={<CreatePaymentService />} />
-                        <Route path="payment" element={<ProcessPaymentService />} />
-                        <Route path="invoice" element={<ProcessPaymentService />} />
-                        <Route path="beneficiary" element={<ProcessPaymentService />} />
+                        <Route index element={<PaymentCreationService />} />
+                        <Route path="payment" element={<PaymentProcessingService data={'Payment is being created...'}/>} />
+                        <Route path="invoice" element={<PaymentProcessingService  data={'Invoice is being created...'}/>} />
+                        <Route path="beneficiary" element={<PaymentProcessingService  data={'Benenficiary is being created...'}/>} />
                     </Route>
-                    <Route path="initialize" element={<InitializePaymentService />} />
+                    <Route path="initialize" element={<PaymentInitializationService />} />
                     <Route path="about" element={<About />} />
                     <Route path="contact" element={<Contact />} />
                 </Route>
             </Route>
         </Route>    
-    
 ))
 
 function Router(){

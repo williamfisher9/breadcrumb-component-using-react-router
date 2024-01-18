@@ -10,6 +10,7 @@ const linkStyle = {
 function ServicesList() {
   return (
     <div className="jumbotron mt-4">
+      <h1>List of Services</h1>
       <ButtonGroup vertical>
         <Button variant="secondary">
           <Link to="/services/process" style={linkStyle}>

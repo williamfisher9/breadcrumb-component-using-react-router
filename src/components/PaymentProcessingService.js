@@ -1,12 +1,12 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 
-function InitializePaymentService() {
+function PaymentProcessingService(props) {
     return (
         <Container>
-            <h1>INITIALIZE</h1>
+            <h1>{props.data}</h1>
         </Container>
     )
 }
 
-export default InitializePaymentService
+export default PaymentProcessingService
