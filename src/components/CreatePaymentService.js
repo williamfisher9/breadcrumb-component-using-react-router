@@ -9,7 +9,7 @@ const linkStyle = {
 
 function CreatePaymentService() {
     return (
-<div class="jumbotron mt-4">
+<div className="jumbotron mt-4">
 <ButtonGroup vertical>
   <Button variant="secondary">
   <Link to="/services/create/payment" style={linkStyle}>Create Payment</Link>

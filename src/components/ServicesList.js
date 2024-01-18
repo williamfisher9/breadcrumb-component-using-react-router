@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ButtonGroup, Dropdown, DropdownButton } from "react-bootstrap";
+import { Button, ButtonGroup, DropdownButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const linkStyle = {
@@ -9,7 +9,7 @@ const linkStyle = {
 
 function ServicesList() {
   return (
-    <div class="jumbotron mt-4">
+    <div className="jumbotron mt-4">
       <ButtonGroup vertical>
         <Button variant="secondary">
           <Link to="/services/process" style={linkStyle}>
@@ -26,15 +26,17 @@ function ServicesList() {
             Payment Initialization
           </Link>
         </Button>
-        <DropdownButton variant="secondary" as={ButtonGroup} title="Other Services" id="bg-vertical-dropdown-1">
-            <Dropdown.Item eventKey="1">
-                <Link to="/services/about" style={{...linkStyle, color: "black"} }>
-            About
-          </Link>
-          </Dropdown.Item>
-            <Dropdown.Item eventKey="2"><Link to="/services/contact"  style={{...linkStyle, color: "black"} }>
-            Contact
-          </Link></Dropdown.Item>
+        <DropdownButton
+          variant="secondary"
+          as={ButtonGroup}
+          title="Other Services"
+          id="bg-vertical-dropdown-1"
+        >
+            <Link className="dropdown-item" to="/services/about" style={{ ...linkStyle, color: "black" }}>About</Link>
+    
+          
+            <Link className="dropdown-item" to="/services/contact" style={{ ...linkStyle, color: "black" }}>Contact</Link>
+          
         </DropdownButton>
       </ButtonGroup>
     </div>
